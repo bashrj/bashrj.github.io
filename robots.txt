@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /message-sent/
+
+Sitemap: https://bashr.me/sitemap.xml
