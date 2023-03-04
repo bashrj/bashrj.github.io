@@ -1,0 +1,200 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="Experiencing slow load times on your Shopify store? This tutorial explores one clever way to combat slow server response time on Shopify stores, which often times results in drastic performance boosts! By reducing the amount of Liquid Shopify has to process at once, you could potentially cut load times in half!"><meta name=keywords content="Shopify,Ruby on Rails,React,Fullstack,Web Developer,Web Development,Shopify development,developers with Shopify skills,software development services,programmers for hire,freelance Shopify engineers,software engineering services"><meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta name=color-scheme content="light only"><meta name=supported-color-schemes content="light only"><link rel="shortcut icon" href=/favicon.png><meta property="og:title" content="Fullstack Shopify developer"><meta property="og:description" content="Full-stack web developer focused on Shopify ecommerce with specialty in theme development and custom apps and over 4 years of professional experience with technologies such as Ruby on Rails, React, Python, Graphql, Javascript, CSS and more! Have an interesting project in mind? Just fill out my form! "><meta property="og:type" content="website"><meta property="og:image" content="/me.png"><meta property="twitter:title" content="Fullstack Shopify developer"><meta property="twitter:description" content="Full-stack web developer focused on Shopify ecommerce with specialty in theme development and custom apps and over 4 years of professional experience with technologies such as Ruby on Rails, React, Python, Graphql, Javascript, CSS and more! Have an interesting project in mind? Just fill out my form! "><meta property="twitter:image" content="/me.png"><link rel=stylesheet href=/scss/index.4c3b25984aecaddd5b9c62f4b73b60f900752172843fcb71700e341e085de16c.css integrity="sha256-TDslmErsrd1bnGL0tztg+QB1IXKEP8txcA40Hghd4Ww=" crossorigin=anonymous><title>How to improve your Shopify store’s server response time</title><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=fallback" as=style onload='this.onload=null,this.rel="stylesheet"'><script>navigator.userAgent.match(/samsung/i)&&alert(`Your browser (Samsung Internet) may not show this website correctly. Please consider using a standards-compliant browser instead. 
+
+We recommend Firefox, Microsoft Edge, or Google Chrome.`)</script><script>function debounce(e,t){var n=null;return function(){var s=this,o=arguments;clearTimeout(n),n=setTimeout(function(){e.apply(s,o)},t)}}</script><style>#main-article-content hr{border-color:rgba(255,255,255,.4);border-width:2px;margin-bottom:7rem;margin-top:7rem}#main-article-content pre:not(.d-md-inline),#main-article-content pre:not(.d-inline){outline:#fff auto 1px}#main-article-content .code-toolbar{margin-top:6rem;margin-bottom:6rem}#main-article-content .picture{margin-bottom:4rem}#main-article-content li+li{margin-top:2rem}#main-article-content p+.code-toolbar{margin-top:4rem}#main-article-content b,#main-article-content strong{color:#fff}#main-article-content pre.d-md-inline+* .copy-to-clipboard-button,#main-article-content pre.d-inline+* .copy-to-clipboard-button{display:none}@media(max-width:576px){#main-article-content .copy-to-clipboard-button{display:none}}</style></head><body class=no-js><div id=filter></div><a href=/ style=min-height:30px><div id=absolute-logo class=position-absolute style=--rgb-shadow-color:var(--bs-primary-rgb)><span class="d-inline d-md-none grad display-5 grad fw-bold">&lt;/ B A S H R . M E></span>
+<span class="d-none d-md-inline grad h1 grad fw-bold">&lt;/ B A S H R . M E></span></div></a><header style=z-index:1;height:0 class="position-sticky top-0 end-0"><div><div class="row justify-content-between"><div class=col-auto></div><div class=col-auto><nav><div id=menuToggle><input onclick="this.disabled=!0" id=toggler type=checkbox>
+<span class=burger></span>
+<span class=burger></span>
+<span class=burger></span><div class="bg-info theme-menu" style=--transition-secs:0.3s></div><div class="bg-white theme-menu" style=--transition-secs:0.5s></div><div class="vgrad theme-menu" style=--transition-secs:0.7s></div><div style=--transition-secs:1s class=theme-menu><div class=position-relative><div class=bg-darker><div id=sidebar-content-container class="container-fluid ms-0 py-5 px-4 px-md-0"><div id=sidebar-content class="d-flex flex-column justify-content-between sidebar-content"><div class="row justify-content-between gap-5 gap-md-0"><div class=col-md-6 style=--rgb-shadow-color:var(--bs-primary-rgb)><nav><ul class="ps-0 list-unstyled d-flex flex-column"><li><a href=/ class="fw-bold display-1">Home</a></li><li><a href=/projects/ class="fw-bold display-1">Projects</a></li><li><a href=/contact/ class="fw-bold display-1">Contact</a></li><li><a href=/articles/ class="fw-bold display-1">Articles</a></li></ul></nav></div></div><div class="row mt-3"><div class="col-md-6 col-sm-9 col-xl-5"><h2 class="fw-bold pb-4 display-4 display-md-6">Where to find me</h2><nav><ul class="ps-0 d-flex flex-column gap-3 flex-wrap nav-ul"><li class="lh-1 d-flex gap-3 align-items-center"><svg viewbox="0 0 24 24" fill="#f8f9fa" width="28" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M2.846 6.887c.03-.295-.083-.586-.303-.784l-2.24-2.7V3h6.958l5.378 11.795L17.367 3H24v.403L22.084 5.24c-.165.126-.247.333-.213.538v13.498c-.034.204.048.411.213.537l1.871 1.837v.403h-9.412v-.403l1.939-1.882c.19-.19.19-.246.19-.537V8.321l-5.389 13.688h-.728l-6.275-13.688v9.174c-.052.385.076.774.347 1.052l2.521 3.058v.404h-7.148v-.404l2.521-3.058c.27-.279.39-.67.325-1.052V6.887z"/></svg><div><a target=_blank class=fs-2 href=https://medium.com/@bashrj>Medium</a></div></li><li class="lh-1 d-flex gap-3 align-items-center"><svg fill="#f8f9fa" width="28" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0H5C2.239.0.0 2.239.0 5v14c0 2.761 2.239 5 5 5h14c2.762.0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966.0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476V19z"/></svg><div><a target=_blank class=fs-2 href=https://www.linkedin.com/in/bashrj/>LinkedIn</a></div></li><li class="lh-1 d-flex gap-3 align-items-center"><svg xmlns="http://www.w3.org/2000/svg" fill="#f8f9fa" width="28" viewBox="0 0 24 24"><path d="M12 0C5.374.0.0 5.373.0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931.0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176.0.0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221.0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg><div><a target=_blank class=fs-2 href=https://github.com/bashrj>Github</a></div></li><li class="lh-1 d-flex gap-3 align-items-center"><svg xmlns="http://www.w3.org/2000/svg" fill="#f8f9fa" width="28" viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.971L12 12.713zm-5.425-1.822L0 5.562v12.501l6.575-7.172zm10.85.0L24 18.063V5.562l-6.575 5.329zm-1.557 1.261L12 15.287l-3.868-3.135-8.11 8.848h23.956l-8.11-8.848z"/></svg><div><a class=fs-2 href=/contact/>Email</a></div></li><li class="lh-1 d-flex gap-3 align-items-center"><svg xmlns="http://www.w3.org/2000/svg" fill="#f8f9fa" width="28" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179.0-5.515 2.966-4.797 6.045C7.728 8.088 4.1 6.128 1.671 3.149c-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142.0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg><div><a target=_blank class=fs-2 href=https://twitter.com/bashrme>Twitter</a></div></li><li class="lh-1 d-flex gap-3 align-items-center"><svg fill="#f8f9fa" width="28" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36"><g id="aa259c0d9_图层_2" data-name="图层 2"><g id="aa259c0d9_Discord_Logos" data-name="Discord Logos"><g id="aa259c0d9_Discord_Logo_-_Large_-_White" data-name="Discord Logo - Large - White"><path d="M107.7 8.07A105.15 105.15.0 0081.47.0a72.06 72.06.0 00-3.36 6.83A97.68 97.68.0 0049 6.83 72.37 72.37.0 0045.64.0 105.89 105.89.0 0019.39 8.09C2.79 32.65-1.71 56.6.54 80.21h0A105.73 105.73.0 0032.71 96.36 77.7 77.7.0 0039.6 85.25a68.42 68.42.0 01-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57.0 0064.32.0c.87.71 1.76 1.39 2.66 2a68.68 68.68.0 01-10.87 5.19 77 77 0 006.89 11.1A105.25 105.25.0 00126.6 80.22h0C129.24 52.84 122.09 29.11 107.7 8.07zM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53 48.84 65.69 42.45 65.69zm42.24.0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53 91.08 65.69 84.69 65.69z"/></g></g></g></svg><div><a target=_blank class=fs-2 href=https://discordapp.com/users/1068576447096172584>Discord</a></div></li></ul></nav></div><div class="col-md pt-5 pt-md-0 d-none d-md-block"><h2 class="fw-bold pb-4 display-4 display-md-6">Recent Projects</h2><nav><ul class="ps-0 d-flex flex-column gap-3"><li class="lh-1 d-flex gap-3 align-items-center"><div class="w-100 d-flex align-items-center"><a class="ellipsis w-100 fs-2" href=/projects/made-by-pivot/><span class=grad>></span>
+Made by Pivot | Project Case Stu...</a></div></li><li class="lh-1 d-flex gap-3 align-items-center"><div class="w-100 d-flex align-items-center"><a class="ellipsis w-100 fs-2" href=/projects/marc-gebauer/><span class=grad>></span>
+Marc Gebauer Lifestyle | Project...</a></div></li><li class="lh-1 d-flex gap-3 align-items-center"><div class="w-100 d-flex align-items-center"><a class="ellipsis w-100 fs-2" href=/projects/prestige-titles-pdf-generator/><span class=grad>></span>
+Prestige Titles PDF Generator | ...</a></div></li><li class="lh-1 d-flex gap-3 align-items-center"><div class="w-100 d-flex align-items-center"><a class="ellipsis w-100 fs-2" href=/projects/winslow-style/><span class=grad>></span>
+Winslow Style Tailoring | Projec...</a></div></li></ul></nav></div></div><div class=row><a href=/ style=min-height:30px><span class="d-inline d-md-none grad display-5 fw-boldest">&lt;/ B A S H R . M E></span>
+<span class="d-none d-md-inline grad h1 fw-boldest">&lt;/ B A S H R . M E></span></a><h2 class="display-6 fw-bold"><span class="h1 fw-bold">Full Stack Web Developer</span></h2></div></div></div></div></div></div></div></nav></div></div></div></header><script>window.addEventListener("load",()=>{document.querySelectorAll(".theme-menu").forEach(e=>{e.classList.add("loaded")})}),document.querySelector("#menuToggle #toggler").addEventListener("click",e=>{e.target.checked?(document.querySelector("html").style.overflowY="hidden",document.querySelector("#filter").classList.add("active")):setTimeout(()=>{document.querySelector("html").style.overflowY="initial",document.querySelector("#filter").classList.remove("active")},750)}),document.querySelector("#menuToggle #toggler").addEventListener("click",debounce(function(e){e.target.disabled=!1},750)),document.querySelector("#filter").addEventListener("click",e=>document.querySelector("#menuToggle #toggler").click())</script><main id=main-content><section id=section-main-project class="px-4 px-lg-0 container-fluid"><div class="row flex-column flex-lg-row justify-content-center gap-lg-5 mt-lg-5 pt-5"><div class=col-lg-6><div class="mb-3 position-sticky project-image"><picture><source media=(min-width:768px) srcset=/img/articles/drastically-improve-your-shopify-stores-loading-speed/cover_image2_hu8feb1decbdd94d0d0bf6a2c972e9c063_62548_900x0_resize_q80_h2_lanczos_3.webp width=900 height=492><img width=445 height=533 class="w-100 h-auto" src=/img/articles/drastically-improve-your-shopify-stores-loading-speed/sm_cover_image_hu0550d46851eafd594e2cb74e9f91bf0c_168115_445x0_resize_q80_h2_lanczos_3.webp alt=.></picture></div></div><div class=col-lg-4><div id=article-card-details class="position-sticky d-flex flex-column justify-content-between"><div><p class="display-6 fw-bold d-block d-lg-none d-xl-block">Author<br><span class=grad>Bashar Abuarja</span></p></div><div><div class=card-subheading><p class="fs-1 fw-bold d-block d-lg-none d-xl-block">Published<br><span class=grad>2022/03</span></p></div><div class=card-subheading><p class="fs-1 fw-bold d-block d-lg-none d-xl-block">Category<br><span class=grad>Shopify web development</span></p></div></div></div></div></div><div class="row flex-column flex-lg-row justify-content-center gap-lg-5"><div class=col-lg-6><div class="position-sticky d-flex flex-column justify-content-between top-0 pt-3 pt-lg-5"><div class=pb-0><h1 class="display-3 fw-bold pb-4">Drastically improve your Shopify store’s server response time</h1><div id=main-article-content class="h1 fw-normal" style=color:#e1e1e1><p>If you&rsquo;re running a Shopify store, you know how important it is to have fast load times. Slow websites can result in lost sales and frustrated customers.</p><p>Fortunately, with the release of Shopify 2.0 came the added feature of rendering sections using the AJAX Cart API, which (with some clever engineering) can be used to improve your store&rsquo;s server response times.</p><p>In this article, I&rsquo;ll share how I use the AJAX Cart API to <a href=https://bashr.me/projects>create fast Shopify themes</a> for my clients .</p><hr><h2 id=the-problem>The problem</h2><p>When you have a deep hierarchy of menus and submenus in your store, it takes Shopify a lot of time to process them before eventually serving the page.</p><p>Even worse when you have the same menu three times, once in the header, once in the footer, and once in a sidebar menu that only appears on mobile.</p><p><u>The more Liquid you have in your theme files</u>, the longer it takes Shopify to process your pages.</p><hr><h2 id=the-process>The process</h2><p>After developing themes for dozens of Shopify stores and noticing the same problem arise, it got me thinking and eventually experimenting.</p><p>The first thought that came to mind was to try loading the menus asynchronously, effectively cutting out the process of <em>processing</em> the menus entirely and serving the page sooner.</p><p>Starting with the homepage template (index.json), I tried the following</p><pre data-file=layouts/theme.liquid>
+  <code class=language-liquid>
+    
+&lt;script&gt;
+  fetch(window.location.pathname + &#34;?sections=header&#34;)
+    .then(res =&gt; res.json()).then(sections =&gt; {
+      let ourHeader =  document.querySelector(&#39;#shopify-section-header&#39;);
+      if(ourHeader &amp;&amp; sections[&#39;header&#39;]) {
+        ourHeader.outerHTML = sections[&#39;header&#39;];
+      }
+  })
+&lt;/script&gt;
+</code></pre><p>Which worked but still did not solve our problem of improving server response time.</p><p>To fix this, I would have to stop Shopify from loading the header in index.json, but somehow still have the section present for use with the Section Rendering API.</p><p>This was somewhat of a paradox; to asynchronously load a section, it would have to be present in a template, but if it&rsquo;s present in a template, then we&rsquo;ve defeated the purpose of asynchronously loading anything!</p><hr><h2 id=thinking-outside-the-box>Thinking outside the box</h2><p>While searching through the Shopify documentation for an answer, I noticed that we don&rsquo;t need to use the Section Rendering API altogether (or at least not directly)</p><p>Instead, we can use the <strong>AJAX Cart API</strong>??</p><p>As it turns out, the Ajax Cart API allows you to fetch sections after making changes to the cart, but more importantly, we can also specify a path to use via the &ldquo;sections_url&rdquo; parameter.</p><p><u>We don&rsquo;t necessarily have to make any changes to the cart to use this feature!</u></p><p>That, and mixed with the fact that we can use</p><p><pre class=d-md-inline><code class=language-markup>?view=</code></pre>to view any page through a specific template, we now have a clear plan to make it all work together.</p><hr><h2 id=the-solution>The solution</h2><p>Creating a suffixed copy of index.json (eg. index.bashr.json) allows us to separately render any section on the homepage through the &ldquo;bashr&rdquo; view</p><pre data-file=layout/theme.liquid>
+  <code class=language-liquid>
+    
+&lt;script&gt;
+fetch(&#39;/cart/update.js&#39;, {
+  method: &#39;POST&#39;,
+  headers: {
+    &#39;Content-Type&#39;: &#39;application/json&#39;
+  },
+  body: JSON.stringify({
+    sections: &#39;header&#39;,
+    sections_url: `${window.location.pathname}?view=bashr`
+  })
+}).then(res =&gt; res.json()).then(data =&gt; {
+  document.querySelector(&#39;#shopify-section-header&#39;).outerHTML =
+    data.sections[&#39;header&#39;];
+})
+&lt;/script&gt;
+</code></pre><p>For this to work, we need our header section to intelligently render the menus only when it&rsquo;s called from the &ldquo;bashr&rdquo; view.</p><pre data-file=sections/header.liquid>
+  <code class=language-liquid>
+    
+{% unless template.suffix == &#34;bashr&#34; %}
+  &lt;div id=&#34;shopify-section-header&#34;&gt;&lt;/div&gt;
+{% else %}
+  {% comment %} Here goes the section&#39;s code {% endcomment %}
+  ...
+{% endunless %}
+</code></pre><p>Reformatting our section like that, we now have an asynchronously loaded header section!</p><p>We can do this for our two other menus (footer + sidebar-menu)</p><pre data-file=layout/theme.liquid>
+  <code class=language-javascript>
+    
+fetch(&#39;/cart/update.js&#39;, {
+  method: &#39;POST&#39;,
+  headers: {
+    &#39;Content-Type&#39;: &#39;application/json&#39;
+  },
+  body: JSON.stringify({
+    sections: &#39;header, sidebar-menu, footer&#39;,
+    sections_url: `${window.location.pathname}?view=bashr`
+  })
+}).then(res =&gt; res.json()).then(data =&gt; {
+  document.querySelector(&#39;#shopify-section-header&#39;).outerHTML =
+    data.sections[&#39;header&#39;];
+
+  document.querySelector(&#39;#shopify-section-footer&#39;).outerHTML =
+    data.sections[&#39;footer&#39;];
+
+  document.querySelector(&#39;#shopify-section-sidebar-menu&#39;).outerHTML =
+    data.sections[&#39;sidebar-menu&#39;];
+})
+</code></pre><pre data-file=sections/footer.liquid>
+  <code class=language-liquid>
+    
+{% unless template.suffix == &#34;bashr&#34; %}
+  &lt;div id=&#34;shopify-section-footer&#34;&gt;&lt;/div&gt;
+{% else %}
+  {% comment %} Here goes the section&#39;s code {% endcomment %}
+  ...
+{% endunless %}
+</code></pre><pre data-file=sections/sidebar-menu.liquid>
+  <code class=language-liquid>
+    
+{% unless template.suffix == &#34;bashr&#34; %}
+  &lt;div id=&#34;shopify-section-sidebar-menu&#34;&gt;&lt;/div&gt;
+{% else %}
+  {% comment %} Here goes the section&#39;s code {% endcomment %}
+  ...
+{% endunless %}
+</code></pre><p>And voila! 🤩</p><p>We&rsquo;ve now asynchronously loaded all three of our menus</p><hr><h2 id=cls-issues>CLS Issues</h2><p>Although we&rsquo;ve potentially improved our site&rsquo;s load speed in one area, we&rsquo;ve potentially worsened our site&rsquo;s load speed in another.</p><p><strong>CLS issues are caused by</strong> unpredictable shifts in layout; if the location of a button you&rsquo;re trying to click abruptly changes, you might unintentionally click something else on the page or miss the button entirely.</p><hr><p>Along with a bare</p><pre class=d-md-inline><code class=language-liquid>&lt;div id=&#34;shopify-section-...&#34; &gt;</code></pre><p>acting as the placeholder on &ldquo;non-bashr&rdquo; views, we can also try setting a height and/or width for that div so that the page accounts for the layout shift.</p><pre data-file=sections/header.liquid>
+  <code class=language-liquid>
+    
+{% unless template.suffix == &#34;bashr&#34; %}
+  &lt;div id=&#34;shopify-section-header&#34;
+       style=&#34;min-height: 200px; min-width: 100vw;&#34;&gt;
+  &lt;/div&gt;
+{% else %}
+  {% comment %} Here goes the section&#39;s code {% endcomment %}
+  ...
+{% endunless %}
+</code></pre><p>Or better yet, a CSS class defined for different viewports</p><pre data-file=sections/header.liquid>
+  <code class=language-liquid>
+    
+{% unless template.suffix == &#34;bashr&#34; %}
+  &lt;div id=&#34;shopify-section-header&#34;
+       class=&#34;header-placeholder&#34;&gt;
+  &lt;/div&gt;
+{% else %}
+  {% comment %} Here goes the section&#39;s code {% endcomment %}
+  ...
+{% endunless %}
+</code></pre><hr><h2 id=accounting-for-random-ids>Accounting for random ids</h2><p>In the above code snippets, we&rsquo;ve assumed every section will have an ID of &ldquo;shopify-section-&rdquo; followed by the name of the file &ldquo;header&rdquo;</p><p>But in reality, most sections have randomly generated IDs, and it would be difficult to guess the IDs of sections that may or may not exist in a template.</p><p>To fix this, I&rsquo;ve created 2 global variables at the very beginning of the document to define &ldquo;asyncSects&rdquo; & &ldquo;asyncLoads&rdquo;</p><pre data-file=layouts/theme.liquid>
+  <code class=language-markup>
+    
+&lt;script&gt;
+  window.asyncSects = window.asyncSects || [];
+  window.asyncLoads = window.asyncLoads || 0;
+&lt;/script&gt;
+</code></pre><p>And replaced the <em>div placeholder</em> in every async section with the following</p><pre data-file=sections/header.liquid>
+  <code class=language-markup>
+    
+&lt;script&gt;
+  window.asyncSects.push({id: &#34;{{ section.id }}&#34;, 
+                          hookname: &#34;section-{{ section.id }}&#34;})
+&lt;/script&gt;
+</code></pre><p>And finally, at the end of the document&mldr;</p><pre data-file=sections/header.liquid>
+  <code class=language-markup>
+    
+&lt;script&gt;
+  window.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
+    const sects = window.asyncSects;
+
+    fetch(&#39;/cart/update.js&#39;, {
+      method: &#39;POST&#39;,
+      headers: {
+        &#39;Content-Type&#39;: &#39;application/json&#39;
+      },
+      body: JSON.stringify({
+        sections: sects.map(s=&gt;s.id).join(&#39;,&#39;),
+        sections_url: `${window.location.pathname}?view=bashr`
+      })
+    }).then(res =&gt; res.json()).then(data =&gt; {
+      Object.keys(data.sections).forEach(s =&gt; {
+        document.getElementById(sects[0].hookname).outerHTML =
+          data.sections[s]
+        window.asyncLoads++;
+      })
+    })
+  })
+&lt;/script&gt;
+</code></pre><p>Now, we don&rsquo;t even have to <u>name the sections</u>, and the code will just know which sections ought to be asynchronously loaded!</p><p>And yes! <u>We can use this for other sections</u> that may cause a slowdown on server side Liquid processing</p><p>All you&rsquo;d have to do is reformat your section to look like this</p><pre data-file=sections/header.liquid>
+  <code class=language-liquid>
+    
+{% unless template.suffix == &#34;bashr&#34; %}
+  &lt;script&gt;
+    window.asyncSects.push({id: &#34;{{ section.id }}&#34;,
+                            hookname: &#34;section-{{ section.id }}&#34;})
+  &lt;/script&gt;
+{% else %}
+  ... (whichever section&#39;s code goes here)
+{% endunless %}
+</code></pre><hr><h2 id=do-you-have-many-sections-you-want-asynchronously-loaded-try-this>Do you have many sections you want asynchronously loaded? Try this!</h2><pre data-file=sections/header.liquid>
+  <code class=language-liquid>
+    
+&lt;script&gt;
+  window.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
+    const chunkSize = 5; // Shopify limits to 5 sections per request!
+    for (let i = 0; i &lt; window.asyncSects.length; i += chunkSize) {
+      const sects = window.asyncSects.slice(i, i + chunkSize);
+
+      fetch(&#39;/cart/update.js&#39;, {
+        method: &#39;POST&#39;,
+        headers: {
+          &#39;Content-Type&#39;: &#39;application/json&#39;
+        },
+        body: JSON.stringify({
+          sections: sects.map(s=&gt;s.id).join(&#39;,&#39;),
+          sections_url: `${window.location.pathname}?view=bashr`
+        })
+      }).then(res =&gt; res.json()).then(data =&gt; {
+        Object.keys(data.sections).forEach(s =&gt; {
+          document.getElementById(sects[0].hookname).outerHTML =
+            data.sections[s]
+          window.asyncLoads++;
+        })
+      })
+    }
+  })
+&lt;/script&gt;
+</code></pre><hr><h2 id=caveats-to-be-aware-of>Caveats to be aware of</h2><ol><li>Every Ajax cart request allows up to 5 sections per request, which may sound great at first for limiting number of requests, but after playing around with it for a while, I&rsquo;ve noticed that 1 section per 1 request is optimal.</li><li>Some themes only load initialization code on the initial page load, and since we&rsquo;re deferring our sections for after the initial page load, we might miss out on that initialization code, check out a slightly more developed version of the JS that addresses this problem on my Github.</li></ol><hr><h2 id=conslusion>Conslusion</h2><p>Although this is not the standard way of rendering sections, it still shows the importance of thinking outside the box and coming up with alternative solutions that ultimately give you an edge over your competitors&rsquo; stores.</p><p>Thanks for reading!</p></div></div></div></div><div class="d-none d-lg-block col-lg-4"><div class="position-sticky d-flex flex-column justify-content-between top-0 pt-3 pt-lg-5 points-container"><div class="pt-5 pb-5 pb-lg-0 pt-lg-5"></div></div></div></div></section><section id=section-contact-cta class="px-4 px-lg-0 container-fluid"><div class="row justify-content-center"><div class="col-lg-9 text-md-center" style=--rgb-shape-color:var(--bs-primary-rgb)><h2><span class="display-0 d-sm-inline d-none fw-bold">Have an interesting Shopify project in mind?</span>
+<span class="display-1 d-inline d-sm-none fw-bold">Have an interesting Shopify project in mind?</span></h2><div><span class="fs-3 text-secondary"></span></div></div></div><div class="row pt-5 justify-content-center mt-md-5"><div class="col-md-8 px-md-5 gap-md-5 gap-3 d-flex align-items-md-center flex-column flex-lg-row text-md-center justify-content-md-center"><a class="btn fw-bold btn-lg btn-dark" href=/contact/>Contact</a><div class="d-flex justify-content-center gap-4 gap-md-5 flex-wrap my-4 my-md-0"><a target=_blank href=https://medium.com/@bashrj><svg viewbox="0 0 24 24" fill="#f8f9fa" width="38" height="38" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M2.846 6.887c.03-.295-.083-.586-.303-.784l-2.24-2.7V3h6.958l5.378 11.795L17.367 3H24v.403L22.084 5.24c-.165.126-.247.333-.213.538v13.498c-.034.204.048.411.213.537l1.871 1.837v.403h-9.412v-.403l1.939-1.882c.19-.19.19-.246.19-.537V8.321l-5.389 13.688h-.728l-6.275-13.688v9.174c-.052.385.076.774.347 1.052l2.521 3.058v.404h-7.148v-.404l2.521-3.058c.27-.279.39-.67.325-1.052V6.887z"/></svg></a><a target=_blank href=https://www.linkedin.com/in/bashrj/><svg fill="#f8f9fa" width="38" height="38" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0H5C2.239.0.0 2.239.0 5v14c0 2.761 2.239 5 5 5h14c2.762.0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966.0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476V19z"/></svg></a><a target=_blank href=https://github.com/bashrj><svg xmlns="http://www.w3.org/2000/svg" fill="#f8f9fa" width="38" height="38" viewBox="0 0 24 24"><path d="M12 0C5.374.0.0 5.373.0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931.0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176.0.0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221.0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a><a href=/contact/><svg xmlns="http://www.w3.org/2000/svg" fill="#f8f9fa" width="38" height="38" viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.971L12 12.713zm-5.425-1.822L0 5.562v12.501l6.575-7.172zm10.85.0L24 18.063V5.562l-6.575 5.329zm-1.557 1.261L12 15.287l-3.868-3.135-8.11 8.848h23.956l-8.11-8.848z"/></svg></a><a target=_blank href=https://twitter.com/bashrme><svg xmlns="http://www.w3.org/2000/svg" fill="#f8f9fa" width="38" height="38" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179.0-5.515 2.966-4.797 6.045C7.728 8.088 4.1 6.128 1.671 3.149c-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142.0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a><a target=_blank href=https://discordapp.com/users/1068576447096172584><svg fill="#f8f9fa" width="38" height="38" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36"><g id="a995cc49_图层_2" data-name="图层 2"><g id="a995cc49_Discord_Logos" data-name="Discord Logos"><g id="a995cc49_Discord_Logo_-_Large_-_White" data-name="Discord Logo - Large - White"><path d="M107.7 8.07A105.15 105.15.0 0081.47.0a72.06 72.06.0 00-3.36 6.83A97.68 97.68.0 0049 6.83 72.37 72.37.0 0045.64.0 105.89 105.89.0 0019.39 8.09C2.79 32.65-1.71 56.6.54 80.21h0A105.73 105.73.0 0032.71 96.36 77.7 77.7.0 0039.6 85.25a68.42 68.42.0 01-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57.0 0064.32.0c.87.71 1.76 1.39 2.66 2a68.68 68.68.0 01-10.87 5.19 77 77 0 006.89 11.1A105.25 105.25.0 00126.6 80.22h0C129.24 52.84 122.09 29.11 107.7 8.07zM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53 48.84 65.69 42.45 65.69zm42.24.0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53 91.08 65.69 84.69 65.69z"/></g></g></g></svg></a></div></div></div></section><script async src=https://bashr.me/js/prism.js></script></main><footer><div class="w-100 mt-5 mt-md-0" style=z-index:1><div class=grad style=height:var(--theme-strip-height)></div></div><div class="bg-darker pt-0 pt-md-5 pb-5"><div class="container ms-0 ms-md-auto py-4 py-md-5 px-4 px-sm-5 px-xxl-0"><div class="row gap-5 gap-md-0"><div class="col-md-6 col-lg-4 col-xl-4" style=--rgb-shadow-color:var(--bs-primary-rgb)><div class="d-flex flex-column gap-md-2 gap-2"><a href=/ style=min-height:30px><span class="d-inline d-md-none grad display-5 fw-bold">&lt;/ B A S H R . M E></span>
+<span class="d-none d-md-inline grad h1 fw-bold">&lt;/ B A S H R . M E></span></a><h2 class="display-6 fw-bold">Full Stack Web Developer</h2></div></div><div class="col-md-6 col-lg-4 col-xl-4 mt-3 mt-lg-0"><h2 class="fw-bold pb-4 display-6">Works & Projects</h2><nav><ul class="list-unstyled ps-0 d-flex flex-column gap-md-4 gap-3"><li class="lh-1 d-flex gap-3 align-items-center"><div class=w-100><a class="fs-2 ellipsis w-100" href=/projects/made-by-pivot/><span class=grad>></span>
+Made by Pivot | Project Case S...</a></div></li><li class="lh-1 d-flex gap-3 align-items-center"><div class=w-100><a class="fs-2 ellipsis w-100" href=/projects/marc-gebauer/><span class=grad>></span>
+Marc Gebauer Lifestyle | Proje...</a></div></li><li class="lh-1 d-flex gap-3 align-items-center"><div class=w-100><a class="fs-2 ellipsis w-100" href=/projects/prestige-titles-pdf-generator/><span class=grad>></span>
+Prestige Titles PDF Generator ...</a></div></li><li class="lh-1 d-flex gap-3 align-items-center"><div class=w-100><a class="fs-2 ellipsis w-100" href=/projects/winslow-style/><span class=grad>></span>
+Winslow Style Tailoring | Proj...</a></div></li></ul></nav></div><div class="col-md-6 col-lg-4 col-xl-3 mt-md-5 pt-md-5 mt-lg-0 pt-lg-0"><h2 class="fw-bold pb-4 display-6">Where to find me</h2><nav><ul class="list-unstyled ps-0 d-flex flex-column gap-md-4 gap-3"><li class="lh-1 d-flex gap-3 align-items-center"><svg viewbox="0 0 24 24" fill="#f8f9fa" width="28" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M2.846 6.887c.03-.295-.083-.586-.303-.784l-2.24-2.7V3h6.958l5.378 11.795L17.367 3H24v.403L22.084 5.24c-.165.126-.247.333-.213.538v13.498c-.034.204.048.411.213.537l1.871 1.837v.403h-9.412v-.403l1.939-1.882c.19-.19.19-.246.19-.537V8.321l-5.389 13.688h-.728l-6.275-13.688v9.174c-.052.385.076.774.347 1.052l2.521 3.058v.404h-7.148v-.404l2.521-3.058c.27-.279.39-.67.325-1.052V6.887z"/></svg><div><a target=_blank class="text-light fs-2" href=https://medium.com/@bashrj>Medium</a></div></li><li class="lh-1 d-flex gap-3 align-items-center"><svg fill="#f8f9fa" width="28" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0H5C2.239.0.0 2.239.0 5v14c0 2.761 2.239 5 5 5h14c2.762.0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966.0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476V19z"/></svg><div><a target=_blank class="text-light fs-2" href=https://www.linkedin.com/in/bashrj/>LinkedIn</a></div></li><li class="lh-1 d-flex gap-3 align-items-center"><svg xmlns="http://www.w3.org/2000/svg" fill="#f8f9fa" width="28" viewBox="0 0 24 24"><path d="M12 0C5.374.0.0 5.373.0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931.0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176.0.0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221.0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg><div><a target=_blank class="text-light fs-2" href=https://github.com/bashrj>Github</a></div></li><li class="lh-1 d-flex gap-3 align-items-center"><svg xmlns="http://www.w3.org/2000/svg" fill="#f8f9fa" width="28" viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.971L12 12.713zm-5.425-1.822L0 5.562v12.501l6.575-7.172zm10.85.0L24 18.063V5.562l-6.575 5.329zm-1.557 1.261L12 15.287l-3.868-3.135-8.11 8.848h23.956l-8.11-8.848z"/></svg><div><a class="text-light fs-2" href=/contact/>Email</a></div></li><li class="lh-1 d-flex gap-3 align-items-center"><svg xmlns="http://www.w3.org/2000/svg" fill="#f8f9fa" width="28" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179.0-5.515 2.966-4.797 6.045C7.728 8.088 4.1 6.128 1.671 3.149c-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142.0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg><div><a target=_blank class="text-light fs-2" href=https://twitter.com/bashrme>Twitter</a></div></li><li class="lh-1 d-flex gap-3 align-items-center"><svg fill="#f8f9fa" width="28" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36"><g id="aadc9fbd1_图层_2" data-name="图层 2"><g id="aadc9fbd1_Discord_Logos" data-name="Discord Logos"><g id="aadc9fbd1_Discord_Logo_-_Large_-_White" data-name="Discord Logo - Large - White"><path d="M107.7 8.07A105.15 105.15.0 0081.47.0a72.06 72.06.0 00-3.36 6.83A97.68 97.68.0 0049 6.83 72.37 72.37.0 0045.64.0 105.89 105.89.0 0019.39 8.09C2.79 32.65-1.71 56.6.54 80.21h0A105.73 105.73.0 0032.71 96.36 77.7 77.7.0 0039.6 85.25a68.42 68.42.0 01-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57.0 0064.32.0c.87.71 1.76 1.39 2.66 2a68.68 68.68.0 01-10.87 5.19 77 77 0 006.89 11.1A105.25 105.25.0 00126.6 80.22h0C129.24 52.84 122.09 29.11 107.7 8.07zM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53 48.84 65.69 42.45 65.69zm42.24.0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53 91.08 65.69 84.69 65.69z"/></g></g></g></svg><div><a target=_blank class="text-light fs-2" href=https://discordapp.com/users/1068576447096172584>Discord</a></div></li></ul></nav></div><div class="col-md-6 col-lg-4 col-xl-4 d-none d-lg-block" style=--rgb-shadow-color:var(--bs-primary-rgb)></div><div class="col-md-6 col-lg-4 col-xl-4 mt-md-5 pt-md-5 mt-lg-0 pt-lg-0"><h2 class="fw-bold pb-4 display-6">Recent Articles</h2><nav><ul class="list-unstyled ps-0 d-flex flex-column gap-md-4 gap-3"><li class="lh-1 d-flex gap-3 align-items-center"><div class=w-100><a class="ellipsis w-100 fs-2" href=/articles/quick-dirty-instagram-feed-your-shopify-store/><span class=grad>></span>
+How to create a quick Instagra...</a></div></li><li class="lh-1 d-flex gap-3 align-items-center"><div class=w-100><a class="ellipsis w-100 fs-2" href=/articles/improve-your-shopify-stores-server-response-time-using-ajax-cart-api/><span class=grad>></span>
+How to improve your Shopify st...</a></div></li></ul></nav></div></div></div></div></footer><script src="https://www.googletagmanager.com/gtag/js?id=G-LC397KJ6MG"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-LC397KJ6MG")</script></body></html>
