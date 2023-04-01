@@ -1,5 +1,4 @@
 User-agent: *
 Disallow: /message-sent/
-Disallow: /me.txt
 
 Sitemap: https://bashr.me/sitemap.xml
